@@ -3,9 +3,9 @@
 Les dejo los ejemplos que vimos en clase sobre NUnit
 Para correr los test, ejecutar 
 
-´´´
+```
 dotnet test
-´´´
+```
 
 En la solucion hay tres proyectos:
 - ListaApp: contiene el source que se está probando, es una implementación de "Lista"
