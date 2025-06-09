@@ -5,12 +5,12 @@ public class ListaTests
     [Test]
     public void getHead_EqualToPosition0()
     {
-        int[] lista = [2,2,3]; // Arrange
+        int[] lista = [2,3,4]; // Arrange
         Lista l = new Lista(lista); // Arrange
 
         int result = l.getHead(); // Act
 
-        Assert.AreEqual(expected: 1, actual: result); // Assert
+        Assert.That(actual: result, Is.EqualTo(expected: 2)); // Assert
     }
 
     [Test]
@@ -21,7 +21,7 @@ public class ListaTests
 
         int result = l.getLast(); // Act
 
-        Assert.AreEqual(expected: 3, actual: result);
+        Assert.That(actual: result, Is.EqualTo(expected: 3));
     }
 
     [Test]
@@ -29,7 +29,7 @@ public class ListaTests
     {
         int[] lista = [1,2,3];
         Lista l = new Lista(lista);
-        Assert.AreEqual(expected: false, actual: l.isVoid());
+        Assert.That(actual: l.isVoid(), Is.EqualTo(expected: false));
     }
 
 
@@ -41,6 +41,7 @@ public class ListaTests
 
         bool result = l.isVoid();
 
-        Assert.IsFalse(result, "La condicion no es verdadera");
+        Assert.IsTrue(result, "La condicion no es verdadera");
+        Assert.That(actual: l.isVoid(), Is.True);
     }    
 }

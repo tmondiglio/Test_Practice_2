@@ -1,4 +1,4 @@
-﻿namespace TestProject2;
+﻿using NUnit.Framework;
 
 public class Tests
 {
@@ -10,6 +10,7 @@ public class Tests
     [Test]
     public void Test1()
     {
-        Assert.Pass();
+        int result = 1;
+        Assert.AreEqual(expected: 1, actual: result);
     }
 }

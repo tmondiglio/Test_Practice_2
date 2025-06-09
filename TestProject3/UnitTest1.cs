@@ -1,5 +1,6 @@
-﻿namespace TestProject2;
+﻿namespace TestProject3;
 
+[TestFixture]
 public class Tests
 {
     [SetUp]

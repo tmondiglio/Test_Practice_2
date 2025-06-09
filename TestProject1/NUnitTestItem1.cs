@@ -8,7 +8,8 @@ public class AssertionExamples
     {
         int expected = 5;
         int actual = 5;
-        Assert.AreEqual(expected, actual, "Los valores no son iguales");
+        Assert.That(actual, Is.EqualTo(expected), "Los valores no son iguales");
+        // Assert.AreEqual(expected, actual, "Los valores no son iguales");
     }
 
     [Test]
@@ -16,7 +17,8 @@ public class AssertionExamples
     {
         int unexpected = 3;
         int actual = 5;
-        Assert.AreNotEqual(unexpected, actual, "Los valores no deberían ser iguales");
+        Assert.That(actual, Is.Not.EqualTo(unexpected), "Los valores no deberían ser iguales");
+        // Assert.AreNotEqual(unexpected, actual, "Los valores no deberían ser iguales");
     }
 
     [Test]
@@ -36,7 +38,7 @@ public class AssertionExamples
     [Test]
     public void TestAssertIsNull()
     {
-        object obj = null;
+        object? obj = null;
         Assert.IsNull(obj, "El objeto no es nulo");
     }
 
@@ -52,7 +54,8 @@ public class AssertionExamples
     {
         var obj = new object();
         var reference = obj;
-        Assert.AreSame(obj, reference, "Las referencias no son iguales");
+        Assert.That(reference, Is.SameAs(obj), "Las referencias no son iguales");
+        // Assert.AreSame(obj, reference, "Las referencias no son iguales");
     }
 
     [Test]
@@ -60,7 +63,8 @@ public class AssertionExamples
     {
         var obj1 = new object();
         var obj2 = new object();
-        Assert.AreNotSame(obj1, obj2, "Las referencias no deberían ser iguales");
+        Assert.That(obj2, Is.Not.SameAs(obj1), "Las referencias no deberían ser iguales");
+        // Assert.AreNotSame(obj1, obj2, "Las referencias no deberían ser iguales");
     }
 
     [Test]
@@ -73,8 +77,9 @@ public class AssertionExamples
     public void TestAssertThat()
     {
         int[] array = { 1, 2, 3 };
+        string text = "Hello World";
         Assert.That(array, Has.Exactly(3).Items, "El array no tiene exactamente 3 elementos");
         Assert.That(array, Has.Member(2), "El array no contiene el número 2");
-        Assert.That("Hello World", Does.StartWith("Hello").And.EndWith("World"), "El string no comienza y termina como se esperaba");
+        Assert.That(text, Does.StartWith("Hello").And.EndWith("World"), "El string no comienza y termina como se esperaba");
     }
 }
