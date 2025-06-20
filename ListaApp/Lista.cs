@@ -11,15 +11,20 @@ public class Lista{
     }
 
     public int[] getTail(){
-        int[] lista_r = new int[lista.Length-1];
-        for(int i=1; i<lista.Length; i++){
-            lista_r[i] = lista[i];
-        }
-        return lista_r;
+        if (lista == null || lista.Length <= 1)
+    {
+        return Array.Empty<int>(); 
     }
 
-    public int getLast(){
-        return lista[lista.Length-1];
+    int[] lista_r = new int[lista.Length-1];
+    for(int i=1; i<lista.Length; i++){
+        lista_r[i-1] = lista[i]; 
+    }
+    return lista_r;
+    }
+
+    public int getLast() {
+        return lista[lista.Length - 1];
     }
 
     public bool isVoid(){
